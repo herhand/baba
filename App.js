@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 export default class App extends React.Component {
 
   state = {
-    kata: "",
+    kata: "1",
     button: []
   };
 
