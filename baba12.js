@@ -1,32 +1,33 @@
-// code from baba, error ketika input
 import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 
-
-export default function App() {
+export default class App extends React.Component {
 
   state = {
-    text: "Please input your full name"
+    kata: ""
   };
 
-  textChangeHandler = val => {
+  kataChangeHandler = val => {
     this.setState({
-      text: val
-    });
-  };
+      kata: val
+    })
+  }
 
+  render() {
+    return (
+      <View style={styles.container}>
 
-  return (
-    <View style={styles.container}>
-      <Text>Hello, Saya sedang belajar React Native</Text>
+        <Text>Hello, saya sedang belajar React Native</Text>
 
-      <TextInput
-        style={{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1 }}
-        onChangeText={this.textChangeHandler}
-        value={this.state.text}
-      />
-    </View>
-  );
+        <TextInput
+          style={{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={this.kataChangeHandler}
+          value={this.state.kata}
+        />
+
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -37,31 +38,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-
-/* // code from tutorial
-import React, { Component } from 'react';
-import { Text, TextInput, View } from 'react-native';
-
-export default class PizzaTranslator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {text: ''};
-  }
-
-  render() {
-    return (
-      <View style={{padding: 10}}>
-        <TextInput
-          style={{height: 40}}
-          placeholder="Type here to translate!"
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-        />
-        <Text style={{padding: 10, fontSize: 42}}>
-          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-        </Text>
-      </View>
-    );
-  }
-} */

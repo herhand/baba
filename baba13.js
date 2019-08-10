@@ -1,48 +1,30 @@
-// code from baba, error ketika input
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
+export default class App extends React.Component {
 
-export default function App() {
-
-  state = {
-    text: "Please input your full name"
-  };
-
-  textChangeHandler = val => {
-    this.setState({
-      text: val
-    });
-  };
-
-
-  return (
-    // <View style={styles.container}>
-    //   <Text>Hello, Saya sedang belajar React Native</Text>
-
-    //   <TextInput
-    //     style={{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1 }}
-    //     onChangeText={this.textChangeHandler}
-    //     value={this.state.text}
-    //   />
-    // </View>
-
-
-    <View style={{ flex: 1, flexDirection: 'column', paddingTop: 26, justifyContent: "center", alignItems: "stretch" }}>
-      <Text
-        style={{ marginLeft: 20 }}
-      >Nama :</Text>
-      <TextInput
-        style={{ marginLeft: 50, width: 300, borderColor: 'gray', borderWidth: 1 }}
-        placeholder='Masukkan Nama'
-      />
-      <Button
-        title='Input'
-        color='pink'
-        accessibilityLabel='Input Nama ke system'
-      />
-    </View>
-  );
+  render() {
+    return (
+      <View style={{
+        flex: 1,
+        flexDirection: 'row',
+        paddingTop: 26,
+        justifyContent: "center",
+        alignItems: "flex-start"
+      }}>
+        <Text
+          style={{ marginRight: 10, paddingTop: 10 }}
+        >Nama :</Text>
+        <TextInput
+          style={{ marginRight: 10, width: 200, paddingTop: 10, borderWidth: 1, borderColor: 'gray' }}
+          placeholder='Masukkan Nama'
+        />
+        <Button
+          title="Input"
+        />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
